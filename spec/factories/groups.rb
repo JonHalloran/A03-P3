@@ -9,10 +9,8 @@
 #  description :text
 #
 
-require 'test_helper'
+RSFactoryGirl.define do
+  factory :board do
 
-class GroupTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  end
 end
