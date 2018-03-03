@@ -17,7 +17,6 @@ RSpec.describe Group, type: :model do
 
   it "has a founder " do
     # p group
-    p group
 
     expect(group.founder.username).to eq("User0")
   end
