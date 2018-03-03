@@ -1,0 +1,2 @@
+class GalleryRating < ApplicationRecord
+end

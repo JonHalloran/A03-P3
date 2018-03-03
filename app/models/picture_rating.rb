@@ -1,0 +1,2 @@
+class PictureRating < ApplicationRecord
+end
