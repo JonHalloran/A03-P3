@@ -17,4 +17,8 @@ class Group < ApplicationRecord
   has_many :memberships,
           class_name: :GroupMembership,
           foreign_key: :group_id
+
+  has_many :members,
+    through: :memberships,
+    source: :member
 end
