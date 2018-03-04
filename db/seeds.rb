@@ -27,4 +27,4 @@ GroupMembership.create!(group_id: 2, member_id: 9)
 
 5.times { |i| GalleryRating.create!(rater_id: ((i + 1) * 2), gallery_id: (i + 1), rating: (i % 5)) }
 
-30.times { |i| PictureRating.create!(rater_id: ((i + 1) % 10), picture_id: (i + 1) % 5, rating: (i % 5)) }
+30.times { |i| PictureRating.create!(rater_id: ((i % 10) + 1), picture_id: (i + 1), rating: (i % 5)) }
