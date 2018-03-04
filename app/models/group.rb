@@ -10,15 +10,5 @@
 #
 
 class Group < ApplicationRecord
-  belongs_to :founder,
-    class_name: :User,
-    foreign_key: :founder_id
 
-  has_many :memberships,
-          class_name: :GroupMembership,
-          foreign_key: :group_id
-
-  has_many :members,
-    through: :memberships,
-    source: :member
 end

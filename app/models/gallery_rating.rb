@@ -11,11 +11,5 @@
 #
 
 class GalleryRating < ApplicationRecord
-  belongs_to :reviewer,
-    foreign_key: :rater_id,
-    class_name: :User
 
-  belongs_to :gallery,
-    foreign_key: :gallery_id,
-    class_name: :Gallery
 end

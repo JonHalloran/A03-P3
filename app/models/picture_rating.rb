@@ -11,13 +11,7 @@
 #
 
 class PictureRating < ApplicationRecord
-  belongs_to :reviewer,
-    foreign_key: :rater_id,
-    class_name: :User
 
-  belongs_to :picture,
-    foreign_key: :picture_id,
-    class_name: :Picture
 
 
 end
