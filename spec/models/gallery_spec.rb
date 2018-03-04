@@ -14,6 +14,14 @@ RSpec.describe Gallery, type: :model do
     expect(gallery.pictures.first.img).to eq("Picture0")
   end
 
+  it "has many ratings" do
+    expect(gallery.ratings.first.rating).to eq(0)
+  end
+
+  it "has many reviewers" do
+    expect(gallery.reviewers.first.username).to eq("User1")
+  end
+
   #
   describe "validations" do
     it "require gallery to have a creator" do

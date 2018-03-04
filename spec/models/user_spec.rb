@@ -17,4 +17,24 @@ subject(:user) {User.first}
     expect(user.founded.first.description).to eq("Super Awesome Group")
   end
 
+  it "has many pictures" do
+    expect(user2.pictures.first.img).to eq("Picture0")
+  end
+
+  it "has many picture reviews"do
+    expect(user2.picture_ratings.first.rating).to eq(1)
+  end
+
+  it "has many gallery reviews"do
+    expect(user2.gallery_ratings.first.rating).to eq(0)
+  end
+
+  it "has many reviewed pictures"do
+    expect(user2.rated_pictures.first.img).to eq("Picture1")
+  end
+
+  it "has many reviewed galleries"do
+    expect(user2.rated_galleries.first.name).to eq("Gallery0")
+  end
+
 end

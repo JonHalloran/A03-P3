@@ -21,10 +21,10 @@ GroupMembership.create!(group_id: 2, member_id: 9)
 
 5.times { |i| Gallery.create!(creator_id: ((i + 1) * 2), name: "Gallery#{i}") }
 
-50.times { |i| Picture.create!(gallery_id: ((i + 1) % 5), img: "Picture#{i}") }
+50.times { |i| Picture.create!(gallery_id: ((i % 5) + 1), img: "Picture#{i}") }
 
-50.times { |i| Tag.create!(picture_id: (i + 1), tagger_id: ((i + 1) % 10)) }
+50.times { |i| Tag.create!(picture_id: (i + 1), tagger_id: ((i + 1) % 10), tag: "Tag#{i}") }
 
-5.times { |i| GalleryRating.create!(rater_id: ((i + 1) * 2), gallery_id: (i + 1)) }
+5.times { |i| GalleryRating.create!(rater_id: ((i + 1) * 2), gallery_id: (i + 1), rating: (i % 5)) }
 
-30.times { |i| PictureRating.create!(rater_id: ((i + 1) % 10), picture_id: (i + 1) % 5) }
+30.times { |i| PictureRating.create!(rater_id: ((i + 1) % 10), picture_id: (i + 1) % 5, rating: (i % 5)) }

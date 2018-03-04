@@ -13,7 +13,9 @@ class User < ApplicationRecord
     foreign_key: :founder_id,
     class_name: :Group
 
-  has_many :galleries
+  has_many :galleries,
+    foreign_key: :creator_id,
+    class_name: :Gallery
 
   has_many :memberships,
     foreign_key: :member_id,
@@ -27,9 +29,13 @@ class User < ApplicationRecord
     through: :galleries,
     source: :pictures
 
-  has_many :gallery_ratings
+  has_many :gallery_ratings,
+    foreign_key: :rater_id,
+    class_name: :GalleryRating
 
-  has_many :picture_ratings
+  has_many :picture_ratings,
+    foreign_key: :rater_id,
+    class_name: :PictureRating
 
   has_many :rated_galleries,
     through: :gallery_ratings,

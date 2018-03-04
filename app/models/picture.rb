@@ -10,4 +10,20 @@
 #
 
 class Picture < ApplicationRecord
+  belongs_to :gallery
+
+  has_many :tags
+
+
+  has_many :ratings,
+    foreign_key: :picture_id,
+    class_name: :PictureRating
+
+  has_many :reviewers,
+    through: :ratings,
+    source: :reviewer
+
+    has_one :photographer,
+    through: :gallery,
+    source: :creator
 end

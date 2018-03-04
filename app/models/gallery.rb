@@ -16,5 +16,15 @@ class Gallery < ApplicationRecord
     foreign_key: :creator_id,
     class_name: :User
 
-  has_many :pictures
+  has_many :pictures,
+    foreign_key: :gallery_id,
+    class_name: :Picture
+
+  has_many :ratings,
+    foreign_key: :gallery_id,
+    class_name: :GalleryRating
+
+  has_many :reviewers,
+    through: :ratings,
+    source: :reviewer
 end
